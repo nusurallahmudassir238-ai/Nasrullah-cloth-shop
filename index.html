@@ -1,1 +1,119 @@
 4
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nasrullah Cloth</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">Nasrullah Cloth</div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#products">Products</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+        <button class="cart-btn" onclick="showCart()">
+            🛒 Cart <span id="cartCount">0</span>
+        </button>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Welcome to Nasrullah Cloth</h1>
+            <p>Premium Quality Clothes at Affordable Prices</p>
+            <a href="#products" class="shop-btn">Shop Now</a>
+        </div>
+    </section>
+
+    <!-- Products -->
+    <section id="products" class="products-section">
+        <h2>Our Products</h2>
+        <p class="section-text">Choose your favorite clothing</p>
+
+        <div class="products">
+
+            <div class="product">
+                <div class="product-image">👕</div>
+                <h3>Premium T-Shirt</h3>
+                <p>High Quality Cotton</p>
+                <h4>Rs. 1,499</h4>
+                <button onclick="addToCart('Premium T-Shirt', 1499)">
+                    Add to Cart
+                </button>
+            </div>
+
+            <div class="product">
+                <div class="product-image">👔</div>
+                <h3>Classic Shirt</h3>
+                <p>Comfortable & Stylish</p>
+                <h4>Rs. 2,499</h4>
+                <button onclick="addToCart('Classic Shirt', 2499)">
+                    Add to Cart
+                </button>
+            </div>
+
+            <div class="product">
+                <div class="product-image">🥻</div>
+                <h3>Premium Shalwar Qameez</h3>
+                <p>Elegant Pakistani Style</p>
+                <h4>Rs. 3,999</h4>
+                <button onclick="addToCart('Premium Shalwar Qameez', 3999)">
+                    Add to Cart
+                </button>
+            </div>
+
+            <div class="product">
+                <div class="product-image">🧥</div>
+                <h3>Stylish Jacket</h3>
+                <p>Modern Fashion</p>
+                <h4>Rs. 4,499</h4>
+                <button onclick="addToCart('Stylish Jacket', 4499)">
+                    Add to Cart
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="about">
+        <h2>About Nasrullah Cloth</h2>
+        <p>
+            Nasrullah Cloth is your trusted online clothing store.
+            We provide quality clothes with modern designs and
+            affordable prices.
+        </p>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="contact">
+        <h2>Contact Us</h2>
+
+        <form onsubmit="sendMessage(event)">
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="email" id="email" placeholder="Your Email" required>
+            <textarea id="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <h3>Nasrullah Cloth</h3>
+        <p>Quality • Style • Trust</p>
+        <p>© 2026 Nasrullah Cloth. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+  </html>
