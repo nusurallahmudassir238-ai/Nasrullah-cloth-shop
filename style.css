@@ -1,117 +1,58 @@
-.hero {
-    min-height: 650px;
-    display: flex;
-    align-items: center;
-    position: relative;
-    overflow: hidden;
-
-    background:
-        linear-gradient(
-            90deg,
-            rgba(0, 0, 0, 0.96) 0%,
-            rgba(0, 0, 0, 0.88) 45%,
-            rgba(0, 0, 0, 0.45) 100%
-        ),
-        url("images/banner.jpg");
-
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-
-    border-bottom: 1px solid #b8862c;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* Luxury golden glow */
-.hero::before {
-    content: "";
-    position: absolute;
-    width: 500px;
-    height: 500px;
-    background: radial-gradient(
-        circle,
-        rgba(212, 175, 55, 0.18),
-        transparent 70%
-    );
-    top: -150px;
-    right: -100px;
-    pointer-events: none;
+html {
+    scroll-behavior: smooth;
 }
 
-/* Hero Content */
-.hero-content {
-    position: relative;
-    z-index: 2;
-    max-width: 650px;
-    padding: 60px 7%;
+body {
+    font-family: "Poppins", Arial, sans-serif;
+    background: #080808;
     color: #fff;
 }
 
-.hero-content h1 {
-    font-family: Georgia, serif;
-    font-size: 65px;
-    letter-spacing: 4px;
-    line-height: 1.05;
-    margin-bottom: 20px;
+/* =========================
+   HEADER
+========================= */
 
-    background: linear-gradient(
-        90deg,
-        #fff,
-        #d4af37,
-        #fff
-    );
-
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.hero-content p {
-    font-size: 19px;
-    line-height: 1.8;
-    color: #ddd;
-    margin-bottom: 35px;
-}
-
-/* Luxury Button */
-.shop-btn {
-    display: inline-block;
-    padding: 15px 35px;
-
-    background: linear-gradient(
-        135deg,
-        #d4af37,
-        #f5d77a,
-        #b8860b
-    );
-
-    color: #111;
-    text-decoration: none;
-    font-weight: bold;
-    letter-spacing: 1px;
-
-    border-radius: 3px;
-    box-shadow: 0 8px 25px rgba(212, 175, 55, 0.25);
-
-    transition: all 0.3s ease;
-}
-
-.shop-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 12px 35px rgba(212, 175, 55, 0.45);
-}
-
-/* Luxury Header */
 header {
-    background: rgba(8, 8, 8, 0.97);
+    width: 100%;
+    height: 85px;
+    padding: 0 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: rgba(5, 5, 5, 0.96);
     border-bottom: 1px solid rgba(212, 175, 55, 0.35);
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
 }
 
 .logo {
-    color: #d4af37;
     font-family: Georgia, serif;
+    font-size: 28px;
+    font-weight: bold;
     letter-spacing: 2px;
+    color: #d4af37;
+}
+
+nav {
+    display: flex;
+    gap: 35px;
 }
 
 nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 15px;
+    letter-spacing: 1px;
     transition: 0.3s;
 }
 
@@ -119,50 +60,459 @@ nav a:hover {
     color: #d4af37;
 }
 
-/* Luxury Cart Button */
+/* Cart */
+
 .cart-btn {
     background: transparent;
     color: #d4af37;
     border: 1px solid #d4af37;
+    padding: 10px 18px;
+    border-radius: 3px;
+    cursor: pointer;
     transition: 0.3s;
 }
 
 .cart-btn:hover {
     background: #d4af37;
+    color: #000;
+}
+
+/* =========================
+   HERO / BACKGROUND
+========================= */
+
+.hero {
+    min-height: 100vh;
+    padding-top: 85px;
+
+    display: flex;
+    align-items: center;
+
+    position: relative;
+
+    background-image:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,0.95) 0%,
+            rgba(0,0,0,0.80) 40%,
+            rgba(0,0,0,0.35) 100%
+        ),
+        url("images/background.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Golden glow */
+
+.hero::after {
+    content: "";
+    position: absolute;
+
+    width: 450px;
+    height: 450px;
+
+    right: -150px;
+    top: 100px;
+
+    background: radial-gradient(
+        circle,
+        rgba(212,175,55,0.25),
+        transparent 70%
+    );
+
+    pointer-events: none;
+}
+
+.hero-content {
+    width: 650px;
+    padding-left: 7%;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-content h1 {
+    font-family: Georgia, serif;
+
+    font-size: 70px;
+    line-height: 1.05;
+
+    letter-spacing: 5px;
+
+    margin-bottom: 20px;
+
+    background: linear-gradient(
+        90deg,
+        #ffffff,
+        #d4af37,
+        #ffffff
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-content p {
+    color: #ddd;
+    font-size: 19px;
+    line-height: 1.8;
+
+    max-width: 550px;
+
+    margin-bottom: 35px;
+}
+
+/* =========================
+   SHOP BUTTON
+========================= */
+
+.shop-btn {
+    display: inline-block;
+
+    padding: 15px 35px;
+
+    text-decoration: none;
+
     color: #111;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+    background: linear-gradient(
+        135deg,
+        #b8860b,
+        #f5d77a,
+        #d4af37
+    );
+
+    border-radius: 3px;
+
+    transition: 0.3s;
+
+    box-shadow:
+        0 10px 30px rgba(212,175,55,0.25);
 }
 
-/* Product Cards */
-.product {
-    border: 1px solid rgba(212, 175, 55, 0.18);
-    transition: all 0.4s ease;
+.shop-btn:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 15px 40px rgba(212,175,55,0.45);
 }
 
-.product:hover {
-    transform: translateY(-10px);
-    border-color: #d4af37;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+/* =========================
+   PRODUCTS
+========================= */
+
+.products-section {
+    padding: 100px 7%;
+    background: #0b0b0b;
+    text-align: center;
 }
 
-.product h4 {
-    color: #b8860b;
-}
-
-/* Luxury Section Titles */
 .products-section h2,
 .about h2,
 .contact h2 {
     font-family: Georgia, serif;
+
+    font-size: 42px;
+
+    color: #d4af37;
+
     letter-spacing: 2px;
+
+    margin-bottom: 12px;
 }
 
-/* Footer */
+.section-text {
+    color: #aaa;
+    margin-bottom: 45px;
+}
+
+.products {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 25px;
+}
+
+/* Product Card */
+
+.product {
+    background: #111;
+
+    padding: 18px;
+
+    border: 1px solid
+        rgba(212,175,55,0.18);
+
+    border-radius: 6px;
+
+    transition: 0.4s;
+}
+
+.product:hover {
+    transform: translateY(-10px);
+
+    border-color: #d4af37;
+
+    box-shadow:
+        0 15px 40px
+        rgba(0,0,0,0.6);
+}
+
+.product-image {
+    height: 230px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #181818,
+            #292929
+        );
+
+    border-radius: 4px;
+
+    font-size: 80px;
+
+    margin-bottom: 20px;
+}
+
+.product h3 {
+    color: #fff;
+    margin-bottom: 8px;
+}
+
+.product p {
+    color: #888;
+    margin-bottom: 12px;
+}
+
+.product h4 {
+    color: #d4af37;
+    font-size: 21px;
+
+    margin-bottom: 18px;
+}
+
+.product button {
+    width: 100%;
+
+    padding: 12px;
+
+    background: transparent;
+
+    border: 1px solid #d4af37;
+
+    color: #d4af37;
+
+    border-radius: 3px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.product button:hover {
+    background: #d4af37;
+    color: #000;
+}
+
+/* =========================
+   ABOUT
+========================= */
+
+.about {
+    padding: 100px 15%;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            rgba(0,0,0,0.9),
+            rgba(0,0,0,0.95)
+        );
+}
+
+.about p {
+    max-width: 800px;
+
+    margin: auto;
+
+    color: #bbb;
+
+    line-height: 1.9;
+
+    font-size: 17px;
+}
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact {
+    padding: 100px 7%;
+
+    text-align: center;
+
+    background: #0b0b0b;
+}
+
+form {
+    max-width: 600px;
+
+    margin: 35px auto;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+}
+
+input,
+textarea {
+    width: 100%;
+
+    padding: 15px;
+
+    background: #151515;
+
+    border: 1px solid #333;
+
+    color: white;
+
+    border-radius: 3px;
+
+    outline: none;
+
+    font-size: 15px;
+}
+
+input:focus,
+textarea:focus {
+    border-color: #d4af37;
+}
+
+textarea {
+    height: 150px;
+
+    resize: none;
+}
+
+form button {
+    padding: 14px;
+
+    background: #d4af37;
+
+    color: #000;
+
+    border: none;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    border-radius: 3px;
+}
+
+form button:hover {
+    background: #f5d77a;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
 footer {
-    background: #080808;
-    border-top: 1px solid rgba(212, 175, 55, 0.3);
+    padding: 40px;
+
+    text-align: center;
+
+    background: #050505;
+
+    border-top:
+        1px solid
+        rgba(212,175,55,0.3);
 }
 
 footer h3 {
-    color: #d4af37;
     font-family: Georgia, serif;
+
+    color: #d4af37;
+
+    font-size: 25px;
+
+    margin-bottom: 10px;
+}
+
+footer p {
+    color: #777;
+
+    margin-top: 8px;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 900px) {
+
+    .products {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero-content h1 {
+        font-size: 50px;
+    }
+
+    nav {
+        gap: 15px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    header {
+        height: auto;
+        padding: 18px 5%;
+
+        flex-wrap: wrap;
+
+        gap: 15px;
+    }
+
+    nav {
+        order: 3;
+
+        width: 100%;
+
+        justify-content: center;
+    }
+
+    .hero-content {
+        padding: 50px 7%;
+    }
+
+    .hero-content h1 {
+        font-size: 40px;
+    }
+
+    .products {
+        grid-template-columns: 1fr;
+    }
+
+    .products-section h2,
+    .about h2,
+    .contact h2 {
+        font-size: 32px;
+    }
 }
