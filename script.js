@@ -1,29 +1,140 @@
-document.addEventListener("DOMContentLoaded", function () {
-    console.log("Nasrullah Cloth Website Loaded Successfully!");
+// ==========================================
+// NASRULLAH CLOTH SHOP
+// JAVASCRIPT
+// ==========================================
+
+
+// ===============================
+// CURRENT YEAR
+// ===============================
+
+const yearElement = document.getElementById("year");
+
+if (yearElement) {
+    yearElement.textContent = new Date().getFullYear();
+}
+
+
+// ===============================
+// SMOOTH SCROLL
+// ===============================
+
+const links = document.querySelectorAll('a[href^="#"]');
+
+links.forEach(function (link) {
+
+    link.addEventListener("click", function (event) {
+
+        const targetId = this.getAttribute("href");
+
+        const target = document.querySelector(targetId);
+
+        if (target) {
+
+            event.preventDefault();
+
+            target.scrollIntoView({
+                behavior: "smooth"
+            });
+
+        }
+
+    });
+
 });
 
-function sendMessage() {
-    const name = document.querySelector('.contact-box input[type="text"]').value.trim();
-    const email = document.querySelector('.contact-box input[type="email"]').value.trim();
-    const phone = document.querySelectorAll('.contact-box input[type="text"]')[1].value.trim();
-    const message = document.querySelector('.contact-box textarea').value.trim();
 
-    if (name === "" || email === "" || phone === "" || message === "") {
-        alert("Please fill in all fields.");
-        return;
-    }
+// ===============================
+// HEADER SCROLL EFFECT
+// ===============================
 
-    alert("Thank you " + name + "! Your message has been received by Nasrullah Cloth.");
-}
+const header = document.querySelector(".header");
 
-function likeProduct(button) {
-    const span = button.querySelector("span");
+window.addEventListener("scroll", function () {
 
-    if (button.classList.contains("liked")) {
-        button.classList.remove("liked");
-        span.innerText = "Like";
+    if (window.scrollY > 50) {
+
+        header.style.background =
+            "rgba(5, 5, 5, 0.98)";
+
     } else {
-        button.classList.add("liked");
-        span.innerText = "Liked ✓";
+
+        header.style.background =
+            "rgba(8, 8, 8, 0.92)";
     }
-}
+
+});
+
+
+// ===============================
+// PRODUCT CARD ANIMATION
+// ===============================
+
+const products =
+    document.querySelectorAll(".product-card");
+
+const observer =
+    new IntersectionObserver(function (entries) {
+
+        entries.forEach(function (entry) {
+
+            if (entry.isIntersecting) {
+
+                entry.target.style.opacity = "1";
+
+                entry.target.style.transform =
+                    "translateY(0)";
+
+            }
+
+        });
+
+    }, {
+        threshold: 0.1
+    });
+
+
+products.forEach(function (product) {
+
+    product.style.opacity = "0";
+
+    product.style.transform =
+        "translateY(30px)";
+
+    product.style.transition =
+        "opacity 0.7s ease, transform 0.7s ease";
+
+    observer.observe(product);
+
+});
+
+
+// ===============================
+// WHATSAPP CLICK MESSAGE
+// ===============================
+
+const whatsappButtons =
+    document.querySelectorAll(
+        'a[href*="wa.me"]'
+    );
+
+whatsappButtons.forEach(function (button) {
+
+    button.addEventListener("click", function () {
+
+        console.log(
+            "Opening Nasrullah Cloth Shop WhatsApp..."
+        );
+
+    });
+
+});
+
+
+// ===============================
+// WELCOME MESSAGE
+// ===============================
+
+console.log(
+    "Welcome to Nasrullah Cloth Shop!"
+);
