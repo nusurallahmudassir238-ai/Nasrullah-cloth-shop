@@ -1,234 +1,481 @@
-// ==========================================
-// NASRULLAH CLOTH - JAVASCRIPT
-// ==========================================
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
 
-// ==========================================
-// 1. PAGE LOAD MESSAGE
-// ==========================================
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-document.addEventListener("DOMContentLoaded", function () {
-    console.log("Nasrullah Cloth Website Loaded Successfully!");
-});
+    <title>Nasrullah Cloth Shop</title>
 
+    <meta name="description"
+        content="Nasrullah Cloth Shop - Premium Quality Clothing, Luxury Style and Affordable Prices.">
 
-// ==========================================
-// 2. CONTACT FORM
-// ==========================================
+    <link rel="stylesheet" href="style.css">
+</head>
 
-function sendMessage() {
+<body>
 
-    const name = document.querySelector(
-        '.contact-box input[type="text"]'
-    ).value.trim();
+    <!-- ================= HEADER ================= -->
 
-    const email = document.querySelector(
-        '.contact-box input[type="email"]'
-    ).value.trim();
+    <header class="header">
 
-    const phone = document.querySelectorAll(
-        '.contact-box input[type="text"]'
-    )[1].value.trim();
+        <div class="logo">
+            <span>NASRULLAH</span>
+            <small>CLOTH SHOP</small>
+        </div>
 
-    const message = document.querySelector(
-        '.contact-box textarea'
-    ).value.trim();
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#collection">Collection</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
 
+        <a class="header-whatsapp"
+            href="https://wa.me/923150616884?text=Assalam%20o%20Alaikum%20Nasrullah%20Cloth%20Shop%2C%20mujhe%20aapki%20clothing%20collection%20ke%20bare%20mein%20maloomat%20chahiye."
+            target="_blank">
+            WhatsApp
+        </a>
 
-    // Check empty fields
+    </header>
 
-    if (name === "" || email === "" || phone === "" || message === "") {
 
-        alert("Please fill in all fields.");
+    <!-- ================= HERO ================= -->
 
-        return;
-    }
+    <section id="home" class="hero">
 
+        <div class="hero-overlay"></div>
 
-    // Email validation
+        <div class="hero-content">
 
-    const emailPattern =
-        /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            <p class="small-title">
+                PREMIUM CLOTHING COLLECTION
+            </p>
 
-    if (!emailPattern.test(email)) {
+            <h1>
+                NASRULLAH
+                <span>CLOTH SHOP</span>
+            </h1>
 
-        alert("Please enter a valid email address.");
+            <p class="hero-text">
+                Discover Premium Fashion, Elegant Designs
+                and High Quality Clothing.
+            </p>
 
-        return;
-    }
+            <div class="hero-buttons">
 
+                <a href="#collection" class="gold-btn">
+                    Explore Collection
+                </a>
 
-    // Success message
+                <a href="https://wa.me/923150616884?text=Assalam%20o%20Alaikum%20Nasrullah%20Cloth%20Shop%2C%20mujhe%20order%20karna%20hai."
+                    target="_blank"
+                    class="outline-btn">
+                    Order on WhatsApp
+                </a>
 
-    alert(
-        "Thank you " +
-        name +
-        "!\n\n" +
-        "Your message has been received by Nasrullah Cloth."
-    );
+            </div>
 
+        </div>
 
-    // Clear form
+    </section>
 
-    document.querySelector(
-        '.contact-box input[type="text"]'
-    ).value = "";
 
-    document.querySelector(
-        '.contact-box input[type="email"]'
-    ).value = "";
+    <!-- ================= FEATURES ================= -->
 
-    document.querySelectorAll(
-        '.contact-box input[type="text"]'
-    )[1].value = "";
+    <section class="features">
 
-    document.querySelector(
-        '.contact-box textarea'
-    ).value = "";
-}
+        <div class="feature">
+            <div class="feature-icon">✦</div>
+            <h3>Premium Quality</h3>
+            <p>High quality fabrics and beautiful finishing.</p>
+        </div>
 
+        <div class="feature">
+            <div class="feature-icon">◆</div>
+            <h3>Luxury Style</h3>
+            <p>Modern designs made for an elegant look.</p>
+        </div>
 
-// ==========================================
-// 3. ORDER BUTTONS
-// ==========================================
+        <div class="feature">
+            <div class="feature-icon">✓</div>
+            <h3>Trusted Service</h3>
+            <p>Customer satisfaction is our priority.</p>
+        </div>
 
-const orderButtons = document.querySelectorAll(
-    ".product-info .btn"
-);
+        <div class="feature">
+            <div class="feature-icon">☎</div>
+            <h3>Easy Ordering</h3>
+            <p>Order easily through WhatsApp.</p>
+        </div>
 
-orderButtons.forEach(function (button) {
+    </section>
 
-    button.addEventListener("click", function () {
 
-        const product = this
-            .closest(".product")
-            .querySelector("h3")
-            .innerText;
+    <!-- ================= COLLECTION ================= -->
 
-        const price = this
-            .closest(".product")
-            .querySelector(".price")
-            .innerText;
+    <section id="collection" class="collection">
 
-        alert(
-            "Product Selected!\n\n" +
-            "Product: " + product + "\n" +
-            "Price: " + price + "\n\n" +
-            "Please contact Nasrullah Cloth to complete your order."
-        );
+        <div class="section-heading">
 
-    });
+            <p>OUR COLLECTION</p>
 
-});
+            <h2>Luxury Fashion</h2>
 
+            <div class="line"></div>
 
-// ==========================================
-// 4. SMOOTH NAVIGATION
-// ==========================================
+            <span>
+                Explore our premium clothing collection.
+            </span>
 
-const navigationLinks =
-    document.querySelectorAll("nav a");
+        </div>
 
-navigationLinks.forEach(function (link) {
 
-    link.addEventListener("click", function (event) {
+        <div class="products">
 
-        const targetId =
-            this.getAttribute("href");
 
-        const targetSection =
-            document.querySelector(targetId);
+            <!-- PRODUCT 1 -->
 
-        if (targetSection) {
+            <div class="product-card">
 
-            event.preventDefault();
+                <div class="product-image">
 
-            targetSection.scrollIntoView({
-                behavior: "smooth"
-            });
+                    <img
+                        src="https://images.unsplash.com/photo-1603252110481-7ba873bf42ab?auto=format&fit=crop&w=800&q=85"
+                        alt="Premium Kurta">
 
-        }
+                    <span class="badge">
+                        NEW
+                    </span>
 
-    });
+                </div>
 
-});
+                <div class="product-info">
 
+                    <h3>Premium Kurta</h3>
 
-// ==========================================
-// 5. CHANGE HEADER WHEN SCROLLING
-// ==========================================
+                    <p>
+                        Elegant premium quality kurta
+                        for a sophisticated look.
+                    </p>
 
-window.addEventListener("scroll", function () {
+                    <div class="product-bottom">
 
-    const header =
-        document.querySelector("header");
+                        <strong>
+                            Rs. 2,999
+                        </strong>
 
-    if (window.scrollY > 80) {
+                        <a href="https://wa.me/923150616884?text=Assalam%20o%20Alaikum%2C%20mujhe%20Premium%20Kurta%20order%20karna%20hai."
+                            target="_blank">
+                            Order
+                        </a>
 
-        header.style.boxShadow =
-            "0 5px 20px rgba(0,0,0,0.35)";
+                    </div>
 
-    } else {
+                </div>
 
-        header.style.boxShadow =
-            "0 3px 15px rgba(0,0,0,0.2)";
-    }
+            </div>
 
-});
 
+            <!-- PRODUCT 2 -->
 
-// ==========================================
-// 6. PRODUCT HOVER EFFECT
-// ==========================================
+            <div class="product-card">
 
-const products =
-    document.querySelectorAll(".product");
+                <div class="product-image">
 
-products.forEach(function (product) {
+                    <img
+                        src="https://images.unsplash.com/photo-1596755389378-c31d21fd1273?auto=format&fit=crop&w=800&q=85"
+                        alt="Premium Shirt">
 
-    product.addEventListener("mouseenter", function () {
+                    <span class="badge">
+                        BEST
+                    </span>
 
-        this.style.cursor = "pointer";
+                </div>
 
-    });
+                <div class="product-info">
 
-});
+                    <h3>Premium Shirt</h3>
 
+                    <p>
+                        Stylish shirt with premium fabric
+                        and comfortable fitting.
+                    </p>
 
-// ==========================================
-// 7. CURRENT YEAR IN FOOTER
-// ==========================================
+                    <div class="product-bottom">
 
-const footer =
-    document.querySelector("footer p");
+                        <strong>
+                            Rs. 2,499
+                        </strong>
 
-if (footer) {
+                        <a href="https://wa.me/923150616884?text=Assalam%20o%20Alaikum%2C%20mujhe%20Premium%20Shirt%20order%20karni%20hai."
+                            target="_blank">
+                            Order
+                        </a>
 
-    const currentYear =
-        new Date().getFullYear();
+                    </div>
 
-    footer.innerHTML =
-        "© " +
-        currentYear +
-        ' <span>Nasrullah Cloth</span>. All Rights Reserved.';
-}
+                </div>
 
+            </div>
 
-// ==========================================
-// 8. WHATSAPP ORDER
-// ==========================================
 
-const whatsappButton =
-    document.querySelector(".whatsapp");
+            <!-- PRODUCT 3 -->
 
-if (whatsappButton) {
+            <div class="product-card">
 
-    whatsappButton.addEventListener("click", function () {
+                <div class="product-image">
 
-        console.log(
-            "Opening Nasrullah Cloth WhatsApp..."
-        );
+                    <img
+                        src="https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?auto=format&fit=crop&w=800&q=85"
+                        alt="Premium Fabric">
 
-    });
+                    <span class="badge">
+                        PREMIUM
+                    </span>
 
-}
+                </div>
+
+                <div class="product-info">
+
+                    <h3>Premium Fabric</h3>
+
+                    <p>
+                        Finest quality fabric for your
+                        perfect traditional style.
+                    </p>
+
+                    <div class="product-bottom">
+
+                        <strong>
+                            Rs. 3,499
+                        </strong>
+
+                        <a href="https://wa.me/923150616884?text=Assalam%20o%20Alaikum%2C%20mujhe%20Premium%20Fabric%20order%20karna%20hai."
+                            target="_blank">
+                            Order
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT 4 -->
+
+            <div class="product-card">
+
+                <div class="product-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1610652492500-ded49ceeb378?auto=format&fit=crop&w=800&q=85"
+                        alt="Classic Collection">
+
+                    <span class="badge">
+                        CLASSIC
+                    </span>
+
+                </div>
+
+                <div class="product-info">
+
+                    <h3>Classic Collection</h3>
+
+                    <p>
+                        Classic clothing collection with
+                        timeless style and comfort.
+                    </p>
+
+                    <div class="product-bottom">
+
+                        <strong>
+                            Rs. 3,999
+                        </strong>
+
+                        <a href="https://wa.me/923150616884?text=Assalam%20o%20Alaikum%2C%20mujhe%20Classic%20Collection%20order%20karni%20hai."
+                            target="_blank">
+                            Order
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= ABOUT ================= -->
+
+    <section id="about" class="about">
+
+        <div class="about-image">
+
+            <img
+                src="https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?auto=format&fit=crop&w=1000&q=85"
+                alt="Nasrullah Cloth Shop">
+
+        </div>
+
+        <div class="about-content">
+
+            <p class="gold-text">
+                ABOUT OUR BRAND
+            </p>
+
+            <h2>
+                Fashion That
+                <span>Defines You</span>
+            </h2>
+
+            <p>
+                Welcome to Nasrullah Cloth Shop.
+                We believe that clothing is more than just
+                fabric. It is a reflection of your personality,
+                confidence and style.
+            </p>
+
+            <p>
+                Our goal is to provide premium quality clothing,
+                elegant designs and excellent customer service
+                at reasonable prices.
+            </p>
+
+            <a href="https://wa.me/923150616884?text=Assalam%20o%20Alaikum%20Nasrullah%20Cloth%20Shop."
+                target="_blank"
+                class="gold-btn">
+                Contact Us
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= CONTACT ================= -->
+
+    <section id="contact" class="contact">
+
+        <div class="section-heading">
+
+            <p>GET IN TOUCH</p>
+
+            <h2>Contact Us</h2>
+
+            <div class="line"></div>
+
+        </div>
+
+
+        <div class="contact-container">
+
+
+            <div class="contact-info">
+
+                <h3>
+                    Nasrullah Cloth Shop
+                </h3>
+
+                <p>
+                    Have a question or want to place
+                    an order? Contact us directly.
+                </p>
+
+                <div class="contact-item">
+                    <strong>WhatsApp</strong>
+                    <a href="https://wa.me/923150616884"
+                        target="_blank">
+                        +92 315 0616884
+                    </a>
+                </div>
+
+                <div class="contact-item">
+                    <strong>Business</strong>
+                    <span>Premium Clothing Store</span>
+                </div>
+
+            </div>
+
+
+            <div class="contact-action">
+
+                <div class="whatsapp-icon">
+                    💬
+                </div>
+
+                <h3>
+                    Order Directly on WhatsApp
+                </h3>
+
+                <p>
+                    Click the button below and
+                    start your order with us.
+                </p>
+
+                <a href="https://wa.me/923150616884?text=Assalam%20o%20Alaikum%20Nasrullah%20Cloth%20Shop%2C%20mujhe%20order%20karna%20hai."
+                    target="_blank"
+                    class="whatsapp-btn">
+
+                    Chat on WhatsApp
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="footer-logo">
+            NASRULLAH
+            <span>CLOTH SHOP</span>
+        </div>
+
+        <p>
+            Premium Fashion • Quality • Style
+        </p>
+
+        <div class="footer-links">
+            <a href="#home">Home</a>
+            <a href="#collection">Collection</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </div>
+
+        <div class="copyright">
+            © <span id="year"></span>
+            Nasrullah Cloth Shop.
+            All Rights Reserved.
+        </div>
+
+    </footer>
+
+
+    <!-- ================= FLOATING WHATSAPP ================= -->
+
+    <a class="floating-whatsapp"
+        href="https://wa.me/923150616884?text=Assalam%20o%20Alaikum%20Nasrullah%20Cloth%20Shop%2C%20mujhe%20aapki%20collection%20ke%20bare%20mein%20maloomat%20chahiye."
+        target="_blank"
+        aria-label="WhatsApp">
+
+        💬
+
+    </a>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
